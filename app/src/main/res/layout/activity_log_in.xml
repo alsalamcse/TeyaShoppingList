@@ -18,22 +18,39 @@
         app:layout_constraintVertical_bias="0.032" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textPersonName"
-        android:text="Name"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="68dp" />
+        tools:layout_editor_absoluteY="65dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="147dp" />
+
+    <Button
+        android:id="@+id/idin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in "
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="141dp"
+        android:layout_height="55dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="398dp" />
 
 </android.support.constraint.ConstraintLayout>
