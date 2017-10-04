@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:orientation="vertical"
     tools:context="com.hsarme.teya.teyashoppinglist.LogInActivity">
 
     <TextView
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.032" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/etEm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -28,7 +29,7 @@
         tools:layout_editor_absoluteY="65dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/etP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -38,19 +39,35 @@
         tools:layout_editor_absoluteY="147dp" />
 
     <Button
-        android:id="@+id/idin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sign in "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="141dp"
-        android:layout_height="55dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="93dp"
+        android:id="@+id/btup"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:text="sign up "
+        tools:layout_editor_absoluteX="97dp"
         tools:layout_editor_absoluteY="398dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sign in "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/btforget"
+            android:layout_width="134dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:text="forget password"
+            tools:layout_editor_absoluteX="231dp"
+            tools:layout_editor_absoluteY="240dp" />
+    </LinearLayout>
+
+</LinearLayout>
