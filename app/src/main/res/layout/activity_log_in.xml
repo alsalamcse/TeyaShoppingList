@@ -39,7 +39,7 @@ android:orientation="vertical"
         tools:layout_editor_absoluteY="147dp" />
 
     <Button
-        android:id="@+id/btup"
+        android:id="@+id/btnup"
         android:layout_width="190dp"
         android:layout_height="50dp"
         android:text="sign up "
@@ -52,7 +52,7 @@ android:orientation="vertical"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btin"
+            android:id="@+id/btnin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,7 +61,7 @@ android:orientation="vertical"
             tools:layout_editor_absoluteY="240dp" />
 
         <Button
-            android:id="@+id/btforget"
+            android:id="@+id/btnforget"
             android:layout_width="134dp"
             android:layout_height="34dp"
             android:layout_weight="1"

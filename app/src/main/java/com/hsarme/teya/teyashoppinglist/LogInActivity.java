@@ -2,16 +2,17 @@ package com.hsarme.teya.teyashoppinglist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class LogInActivity extends AppCompatActivity
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener
 {
     private EditText etEm;
     private EditText etP;
-    private Button btin;
-    private Button btup;
-    private Button btforget;
+    private Button btnin;
+    private Button btnup;
+    private Button btnforget;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +20,19 @@ public class LogInActivity extends AppCompatActivity
         setContentView(R.layout.activity_log_in);
         etEm=(EditText)findViewById(R.id.etEm);
         etP=(EditText)findViewById(R.id.etP);
-        btin=(Button)findViewById(R.id.btin);
-        btup=(Button)findViewById(R.id.btup);
-        btforget=(Button)findViewById(R.id.btforget);
+        btnin=(Button)findViewById(R.id.btnin);
+        btnup=(Button)findViewById(R.id.btnup);
+        btnforget=(Button)findViewById(R.id.btnforget);
+
+    }
+
+    @Override
+    public void onClick(View view)
+    {
+        if (view==btnin)
+        {
+
+        }
 
     }
 }
