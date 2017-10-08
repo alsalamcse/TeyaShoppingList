@@ -19,6 +19,9 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import mainlistfragments.CurrentListFragment;
+import mainlistfragments.HistoryFragment;
+
 public class MainListActivity extends AppCompatActivity {
 
     /**
@@ -35,6 +38,8 @@ public class MainListActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    private CurrentListFragment currentListFragment;
+    private HistoryFragment historyFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +132,8 @@ public class MainListActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends FragmentPagerAdapter  {
+
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -137,22 +143,37 @@ public class MainListActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+
+            if (position == 0)
+            {
+                if (currentListFragment == null)
+                    currentListFragment = new CurrentListFragment();
+                return currentListFragment;
+            }
+            if (position==1)
+            {
+                if (historyFragment==null)
+                    historyFragment=new HistoryFragment();
+                return historyFragment;
+
+            }
+            return null;
         }
+
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Current List";
                 case 1:
-                    return "SECTION 2";
+                    return "History";
                 case 2:
                     return "SECTION 3";
             }
@@ -160,3 +181,5 @@ public class MainListActivity extends AppCompatActivity {
         }
     }
 }
+
+
