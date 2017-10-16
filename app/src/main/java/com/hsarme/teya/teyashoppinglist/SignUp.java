@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUp extends AppCompatActivity
+public class SignUp extends AppCompatActivity implements View.OnClickListener
 {
     private EditText etName;
     private EditText etemail;
@@ -112,9 +112,14 @@ private void dataHandler()
 }
 
 
-
-
+    @Override
+    public void onClick(View view) {
+        if (btnsave==view)
+        {
+            dataHandler();
+        }
     }
+}
 
 
 
