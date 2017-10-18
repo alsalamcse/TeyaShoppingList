@@ -37,18 +37,19 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener
         btnsave = (Button) findViewById(R.id.btnSave);
         auth = FirebaseAuth.getInstance();
         firebaseUser = auth.getCurrentUser();
-        if (firebaseUser == null) {
-            startActivity(new Intent(this, LogInActivity.class));
-            finish();
-            return;
-        } else {
-            String userName = firebaseUser.getDisplayName();
-            if (firebaseUser.getPhotoUrl() != null) {
-                String phothoUlr = firebaseUser.getPhotoUrl().toString();
-
-            }
-
-        }
+//        if (firebaseUser == null) {
+//            startActivity(new Intent(this, LogInActivity.class));
+//            finish();
+//            return;
+//        } else {
+//            String userName = firebaseUser.getDisplayName();
+//            if (firebaseUser.getPhotoUrl() != null) {
+//                String phothoUlr = firebaseUser.getPhotoUrl().toString();
+//
+//            }
+//
+//
+//        }
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +107,7 @@ private void dataHandler()
         }
     }
         });
-
+FirebaseAuth.getInstance().signOut();
 
 
 }

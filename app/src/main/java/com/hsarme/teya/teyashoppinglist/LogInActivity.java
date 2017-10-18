@@ -21,6 +21,7 @@ public class LogInActivity extends AppCompatActivity
         setContentView(R.layout.activity_log_in);
         etEm=(EditText)findViewById(R.id.etEm);
         etP=(EditText)findViewById(R.id.etP);
+        btnforget=(Button)findViewById(R.id.btnforget);
         btnin=(Button)findViewById(R.id.btnin);
         btnin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,9 +31,27 @@ public class LogInActivity extends AppCompatActivity
             }
         });
         btnup=(Button)findViewById(R.id.btnup);
-        btnforget=(Button)findViewById(R.id.btnforget);
+        btnup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getBaseContext(),SignUp.class);
+                startActivity(i);
 
-    }
+            }
+        });
 
 
-}
+                                 }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
