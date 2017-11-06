@@ -42,7 +42,7 @@ public class CurrentListFragment extends Fragment {
         imbsave=(ImageButton) view.findViewById(R.id.imbsave);
         lstvcurrent=(ListView) view.findViewById(R.id.lstvcurrent);
         String [] ar={"noor","rimaa","teya","shada"};
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this.)
+
 
         return view;
 
