@@ -15,6 +15,7 @@ public class LogInActivity extends AppCompatActivity
     private Button btnup;
     private Button btnforget;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
