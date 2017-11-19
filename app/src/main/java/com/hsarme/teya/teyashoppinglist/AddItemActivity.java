@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class AddItemActivity extends AppCompatActivity {
     private EditText etamount;
@@ -26,7 +27,7 @@ public class AddItemActivity extends AppCompatActivity {
         etPrice=(EditText)findViewById(R.id.etPrice);
         etUnits=(EditText)findViewById(R.id.etUnits);
         iBtnImage=(ImageButton) findViewById(R.id.iBtnImage);
-        btnsave=(Button)findViewById(R.id.btnSave);
+        btnsave=(Button)findViewById(R.id.btnsave);
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +42,13 @@ public class AddItemActivity extends AppCompatActivity {
         String stUnits=etUnits.getText().toString();
         double amount=Double.parseDouble(stamount);
         double price=Double.parseDouble(stPrice);
-        DatabaseReference reference;
+
+
+        DatabaseReference reference;// 3nwan entrnet
+        //todo לקבלת קישט=ור למסך הניתונים שלנו
+        //todo קישור הינו לשורש של המסך הניתונים
+        reference= FirebaseDatabase.getInstance().getReference();
+        reference.child("list").setValue(stname);
         }
     }
 
