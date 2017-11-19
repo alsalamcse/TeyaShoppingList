@@ -41,7 +41,7 @@ public class AddItemActivity extends AppCompatActivity {
         String stUnits=etUnits.getText().toString();
         double amount=Double.parseDouble(stamount);
         double price=Double.parseDouble(stPrice);
-        DatabaseReference;
+        DatabaseReference reference;
         }
     }
 
