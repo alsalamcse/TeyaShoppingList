@@ -42,8 +42,7 @@ public class LogInActivity extends AppCompatActivity {
         btnin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getBaseContext(), AddItemActivity.class);
-                startActivity(i);
+                dataHandler();
 
 
             }
@@ -62,8 +61,32 @@ public class LogInActivity extends AppCompatActivity {
 
 
 
+    private void signIn(String email, String passw) {
+        auth.signInWithEmailAndPassword(email, passw).addOnCompleteListener(LogInActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NotNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LogInActivity.this, "signIn Successful.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LogInActivity.this, "signIn failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+                }
+            }
+        });
+
 
     }
+    private void dataHandler() {
+        String stemail = etEm.getText().toString();
+        String stpassword = etP.getText().toString();
+        signIn(stemail, stpassword);
+
+    }
+
+
+
+    }
+
 
 
 
