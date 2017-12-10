@@ -3,6 +3,7 @@ package mainlistfragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,15 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hsarme.teya.teyashoppinglist.R;
+import com.hsarme.teya.teyashoppinglist.data.product;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,10 +51,44 @@ public class CurrentListFragment extends Fragment {
         imbsave=(ImageButton) view.findViewById(R.id.imbsave);
         lstvcurrent=(ListView) view.findViewById(R.id.lstvcurrent);
         String [] ar={"noor","rimaa","teya","shada"};
+        readAndListen();
+
 
 
         return view;
 
+    }
+
+    //read and listen data from firebase
+    private void readAndListen()
+    {
+        FirebaseAuth auth=FirebaseAuth.getInstance();// to get user email.. user info
+        FirebaseUser user=auth.getCurrentUser();
+        String email=user.getEmail();
+        email=email.replace('.','*');
+        DatabaseReference reference;// 3nwan entrnet
+        //todo לקבלת קישט=ור למסך הניתונים שלנו
+        //todo קישור הינו לשורש של המסך הניתונים
+        //7. saving data on the firebase database
+        reference= FirebaseDatabase.getInstance().getReference();
+        // 8. add completeListener to check if the insertion done
+        reference.child(email).child("my list").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                for (DataSnapshot ds:dataSnapshot.getChildren())
+                {
+                    product p=ds.getValue(product.class);
+                    Log.d("SL",p.toString());
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 
