@@ -32,6 +32,10 @@ public class CurrentListFragment extends Fragment {
     private TextView tvcountvalue;
     private ImageButton imbsave;
     private ListView lstvcurrent;
+    pr
+
+
+
 
 
     public CurrentListFragment() {
@@ -50,7 +54,7 @@ public class CurrentListFragment extends Fragment {
         tvcountvalue=(TextView) view.findViewById(R.id.tvcountvalue);
         imbsave=(ImageButton) view.findViewById(R.id.imbsave);
         lstvcurrent=(ListView) view.findViewById(R.id.lstvcurrent);
-        String [] ar={"noor","rimaa","teya","shada"};
+
         readAndListen();
 
 
