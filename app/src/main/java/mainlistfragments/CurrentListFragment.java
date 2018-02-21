@@ -72,9 +72,11 @@ public class CurrentListFragment extends Fragment {
         //7. saving data on the firebase database
         reference= FirebaseDatabase.getInstance().getReference();
         // 8. add completeListener to check if the insertion done
+        
+        //// todo בפעם הראשונה שמופעל המאזין מרבלים בעתק לכל הנתונים תחת כתובת זו 
         reference.child(email).child("my list").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
+            public void onDataChange(DataSnapshot dataSnapshot) //// todo העתק מהנותנים שהורדנו 
             {
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
