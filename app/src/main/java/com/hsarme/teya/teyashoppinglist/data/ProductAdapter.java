@@ -19,12 +19,12 @@ import com.sun.istack.internal.NotNull;
  * Created by user on 21/02/2018.
  */
 
-public class productAdapter extends ArrayAdapter<product> {
+public class ProductAdapter extends ArrayAdapter<product> {
     /**
      * context
      * rescoure
      */
-    public productAdapter(@NotNull Context context, @LayoutRes int resouce) {
+    public ProductAdapter(@NotNull Context context, @LayoutRes int resouce) {
         super(context, resouce);
     }
 

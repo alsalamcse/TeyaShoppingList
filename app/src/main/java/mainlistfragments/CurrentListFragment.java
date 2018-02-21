@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hsarme.teya.teyashoppinglist.R;
 import com.hsarme.teya.teyashoppinglist.data.product;
+import com.hsarme.teya.teyashoppinglist.data.ProductAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +32,8 @@ public class CurrentListFragment extends Fragment {
     private TextView tvcountvalue;
     private ImageButton imbsave;
     private ListView lstvcurrent;
-    pr
+
+    private ProductAdapter adapter;
 
 
 
