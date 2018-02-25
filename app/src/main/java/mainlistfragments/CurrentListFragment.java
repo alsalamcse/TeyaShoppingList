@@ -33,7 +33,7 @@ public class CurrentListFragment extends Fragment {
     private ImageButton imbsave;
     private ListView lstvcurrent;
 
-    private ProductAdapter adapter;
+    private ProductAdapter productAdapter;
 
 
 
@@ -56,6 +56,9 @@ public class CurrentListFragment extends Fragment {
         imbsave=(ImageButton) view.findViewById(R.id.imbsave);
         lstvcurrent=(ListView) view.findViewById(R.id.lstvcurrent);
 
+        productAdapter=new ProductAdapter(getContext(),R.layout.productitem);
+        lstvcurrent.setAdapter(productAdapter);
+//
         readAndListen();
 
 
@@ -83,10 +86,13 @@ public class CurrentListFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) //// todo העתק מהנותנים שהורדנו 
             {
+                productAdapter.clear();
                 for (DataSnapshot ds:dataSnapshot.getChildren())
                 {
                     product p=ds.getValue(product.class);
                     Log.d("SL",p.toString());
+                    productAdapter.add(p);
+
                 }
 
             }

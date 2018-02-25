@@ -45,7 +45,7 @@ public class ProductAdapter extends ArrayAdapter<product> {
         TextView itmTvprice = (TextView) view.findViewById(R.id.itmTvprice);
         TextView itmTvamount = (TextView) view.findViewById(R.id.itmTvamount);
         ImageView itmImage=(ImageView)view.findViewById(R.id.itmChblsCompleted);
-        CheckBox itmChbIsCompleted=(CheckBox)view.findViewById(R.id.itmChblsCompleted);
+        CheckBox itmChbIsCompleted=(CheckBox)view.findViewById(R.id.itmCblsCompleted);
         product p =getItem(position);
         itmTvname.setText(p.getName());
         itmTvprice.setText((int) p.getPrice()+"");
